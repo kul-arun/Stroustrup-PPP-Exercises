@@ -5,21 +5,18 @@ int main() {
     std::cout << "Enter the spelled-out number in lowercase: ";
     std::string number;
     std::cin >> number;
-    int digit = -1;
     if (number == "zero") {
-        digit = 0;
+        std::cout << 0;
     } else if (number == "one") {
-        digit = 1;
+        std::cout << 1;
     } else if (number == "two") {
-        digit = 2;
+        std::cout << 2;
     } else if (number == "three") {
-        digit = 3;
+        std::cout << 3;
     } else if (number == "four") {
-        digit = 4;
-    }
-    if (digit == -1) {
-        std::cout << "not an number I know\n";
+        std::cout << 4;
     } else {
-        std::cout << digit << '\n';
+        std::cout << "not a number I know";
     }
+    std::cout << std::endl;
 }
