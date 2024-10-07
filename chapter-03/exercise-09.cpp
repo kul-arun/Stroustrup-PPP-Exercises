@@ -1,21 +1,17 @@
 #include <iostream>
+#include <vector>
 
 int main() {
-    std::cout << "Enter the minimum number of grains required: ";
-    int required_count;
-    std::cin >> required_count;
-    int total_count = 0;
-    int square_count = 0;
-    int grains_number = 1; // number of grains for the current square.
-    while (total_count < required_count) {
-        ++square_count;
-        total_count += grains_number;
-        grains_number *= 2;
-    }
-    if (square_count == 1) {
-        std::cout << square_count << " square is required for at least "
-                  << required_count << " grain.\n";
-    } else {
+    std::vector<int> required_counts = {1000, 1'000'000, 1'000'000'000};
+    for (auto required_count : required_counts) {
+        int total_count = 0;
+        int square_count = 0;
+        int grains_number = 1; // number of grains for the current square.
+        while (total_count < required_count) {
+            ++square_count;
+            total_count += grains_number;
+            grains_number *= 2;
+        }
         std::cout << square_count << " squares are required for at least "
                   << required_count << " grains.\n";
     }
